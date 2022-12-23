@@ -1194,6 +1194,14 @@
                  :sha     "b1a7fd310b6511048fbacb8e496f574c8ccfa291"}}
    :main-opts  ["-m" "closh.zero.frontend.rebel"]}
 
+  ;; borrowed from seancorfield/dot-clojure
+  :dev/repl {:jvm-opts ["-XX:-OmitStackTraceInFastThrow"]
+             :main-opts ["-e" "(load-file,(str,(System/getenv,\"XDG_CONFIG_HOME\"),\"/clojure/dev.clj\"))"]}
+
+  ;; Use of :paths external to the project has been deprecated
+  ;; if you want to use $XDG_CONFIG_HOME/clojure/user.clj
+  ;; make a symbolic link from the project concerned.
+  :user_clj {:extra-paths ["$XDG_CONFIG_HOME/clojure"]}
   #_()}
  ;; End of alias definitions
  ;; --------------------------------------------------
